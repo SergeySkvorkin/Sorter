@@ -57,10 +57,10 @@
             this.chBoxEequipmentBag = new System.Windows.Forms.CheckBox();
             this.chBoxeEquipmentPapers = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBox = new System.Windows.Forms.TextBox();
+            this.txtBoxSystemOS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxSystemBad = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -306,6 +306,7 @@
             this.chBoxEquipmentCharger.TabIndex = 26;
             this.chBoxEquipmentCharger.Text = "Зарядка";
             this.chBoxEquipmentCharger.UseVisualStyleBackColor = true;
+            this.chBoxEquipmentCharger.CheckedChanged += new System.EventHandler(this.chBoxEquipmentCharger_CheckedChanged);
             // 
             // chBoxquipmentLodgment
             // 
@@ -349,12 +350,12 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Система\\Неисправности";
             // 
-            // txtBox
+            // txtBoxSystemOS
             // 
-            this.txtBox.Location = new System.Drawing.Point(649, 63);
-            this.txtBox.Name = "txtBox";
-            this.txtBox.Size = new System.Drawing.Size(143, 23);
-            this.txtBox.TabIndex = 29;
+            this.txtBoxSystemOS.Location = new System.Drawing.Point(649, 63);
+            this.txtBoxSystemOS.Name = "txtBoxSystemOS";
+            this.txtBoxSystemOS.Size = new System.Drawing.Size(143, 23);
+            this.txtBoxSystemOS.TabIndex = 29;
             // 
             // label10
             // 
@@ -374,12 +375,12 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Неисправность(Если имеется)";
             // 
-            // textBox6
+            // txtBoxSystemBad
             // 
-            this.textBox6.Location = new System.Drawing.Point(646, 117);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 23);
-            this.textBox6.TabIndex = 32;
+            this.txtBoxSystemBad.Location = new System.Drawing.Point(646, 117);
+            this.txtBoxSystemBad.Name = "txtBoxSystemBad";
+            this.txtBoxSystemBad.Size = new System.Drawing.Size(148, 23);
+            this.txtBoxSystemBad.TabIndex = 32;
             // 
             // label12
             // 
@@ -446,10 +447,10 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtBoxSystemBad);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtBox);
+            this.Controls.Add(this.txtBoxSystemOS);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chBoxEquipmentCharger);
@@ -517,10 +518,10 @@
         private CheckBox chBoxEequipmentBag;
         private CheckBox chBoxeEquipmentPapers;
         private Label label9;
-        private TextBox txtBox;
+        private TextBox txtBoxSystemOS;
         private Label label10;
         private Label label11;
-        private TextBox textBox6;
+        private TextBox txtBoxSystemBad;
         private Label label12;
         private Label label13;
         private Label label14;

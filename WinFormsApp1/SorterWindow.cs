@@ -239,31 +239,70 @@
                 equipmentPapers = false;
             }
         }
-
-        private void chBoxEquipmentPapers_CheckedChanged(object sender, EventArgs e)
+        private void chBoxEquipmentCharger_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
             if (checkBox.Checked == true)
             {
-                equipmentPapers = true;
+                equipmentCharger = true;
             }
             else
             {
-                equipmentPapers = false;
+                equipmentCharger = false;
             }
         }
 
-        private void doneButton_Click(object sender, EventArgs e)
+        private string equipmentStringBuilder()
+        {
+            string equipment = "";
+            laptopOther = txtBoxLaptopOther.Text;
+            if (!equipmentLodgment && !equipmentBag && !equipmentPapers && !equipmentCharger)
+            {
+                equipment = "Полная";
+            }
+            else
+            {
+                if (equipmentLodgment) { equipment += "Ложемент "; }
+                if (equipmentBag) { equipment += "Мешок "; }
+                if (equipmentPapers) { equipment += "Мукулатура "; }
+                if (equipmentCharger) { equipment += " Зарядка"; }
+                
+            }
+            return equipment;
+
+        }
+
+
+        // Секция системы
+
+        private string systemStringBuilder()
+        {
+            string systemOS = txtBoxSystemOS.Text;
+            string systemBad = txtBoxSystemBad.Text;
+            if (!string.IsNullOrEmpty(systemBad))
+            {
+                return systemBad;
+            }
+            else
+
+                return systemOS;
+        }
+
+            private void doneButton_Click(object sender, EventArgs e)
         {
             
             string laptopSN = txtBoxLaptopSn.Text;
             string cardboardSN = txtBoxCardboardSn.Text;
             string cardboardString = cardboardStringBuilder();
             string laptopString = laptopStringBuilder();
+            string equipmentString = equipmentStringBuilder();
+            string systemString = systemStringBuilder();
             MessageBox.Show("Серийник коробки: " + cardboardSN + "\n" +
                             "Серийник ноутбука: " + laptopSN + "\n" +
                             "Проблемы коробки: " + cardboardString + "\n" +
-                            "проблемы ноутбука: " + laptopString);
+                            "проблемы ноутбука: " + laptopString + "\n" +
+                            "В комплектации отсутсвует: " + equipmentString + "\n" +
+                            "Система" + systemString);
 
         }
 
