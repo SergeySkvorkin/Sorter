@@ -23,7 +23,7 @@
         public bool equipmentBag = false;
         public bool equipmentPapers = false;
         public bool equipmentCharger = false;
-
+        public string model;
 
 
         
@@ -33,9 +33,13 @@
             InitializeComponent();
         }
 
+        void cmbBoxModelIndexChanged(object sender, EventArgs e)
+        {
+            model = cmbBoxModel.SelectedItem.ToString();
+        }
 
-
-//Секция коробки
+        
+        //Секция коробки
         private void chBoxCardboardDamage_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
@@ -273,6 +277,7 @@
         }
 
 
+
         // Секция системы
 
         private string systemStringBuilder()
@@ -297,18 +302,27 @@
             string laptopString = laptopStringBuilder();
             string equipmentString = equipmentStringBuilder();
             string systemString = systemStringBuilder();
-            MessageBox.Show("Серийник коробки: " + cardboardSN + "\n" +
+
+            MessageBox.Show("Модель ноутбука: " + model +
+                            "Серийник коробки: " + cardboardSN + "\n" +
                             "Серийник ноутбука: " + laptopSN + "\n" +
                             "Проблемы коробки: " + cardboardString + "\n" +
                             "проблемы ноутбука: " + laptopString + "\n" +
                             "В комплектации отсутсвует: " + equipmentString + "\n" +
-                            "Система" + systemString);
+                            "Система" + systemString) ;
 
         }
 
+        private void modelRmvBtn_Click(object sender, EventArgs e)
+        {
+            string modelForRmv = cmbBoxModel.Text;
+            cmbBoxModel.Items.Remove(modelForRmv);
+        }
 
-
-
-
+        private void modelAddBtn_Click(object sender, EventArgs e)
+        {
+            string modelForAdd = cmbBoxModel.Text;
+            cmbBoxModel.Items.Add(modelForAdd);
+        }
     }
 }

@@ -33,7 +33,6 @@
             this.txtBoxCardboardSn = new System.Windows.Forms.TextBox();
             this.txtBoxLaptopSn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmBoxLaptopModel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chBoxCardboardDamage = new System.Windows.Forms.CheckBox();
             this.chBoxCardboardDirt = new System.Windows.Forms.CheckBox();
@@ -67,6 +66,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.cmbBoxModel = new System.Windows.Forms.ComboBox();
+            this.modelAddBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -111,18 +112,10 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "S/N ноутбука";
             // 
-            // cmBoxLaptopModel
-            // 
-            this.cmBoxLaptopModel.FormattingEnabled = true;
-            this.cmBoxLaptopModel.Location = new System.Drawing.Point(12, 42);
-            this.cmBoxLaptopModel.Name = "cmBoxLaptopModel";
-            this.cmBoxLaptopModel.Size = new System.Drawing.Size(121, 23);
-            this.cmBoxLaptopModel.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(8, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 15);
             this.label3.TabIndex = 6;
@@ -186,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(155, 23);
+            this.label4.Location = new System.Drawing.Point(151, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(153, 15);
             this.label4.TabIndex = 12;
@@ -227,7 +220,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 24);
+            this.label7.Location = new System.Drawing.Point(310, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 15);
             this.label7.TabIndex = 20;
@@ -291,7 +284,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(477, 24);
+            this.label8.Location = new System.Drawing.Point(473, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(166, 15);
             this.label8.TabIndex = 27;
@@ -344,7 +337,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(649, 24);
+            this.label9.Location = new System.Drawing.Point(645, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 15);
             this.label9.TabIndex = 28;
@@ -436,11 +429,35 @@
             this.label18.TabIndex = 39;
             this.label18.Text = "5:";
             // 
+            // cmbBoxModel
+            // 
+            this.cmbBoxModel.FormattingEnabled = true;
+            this.cmbBoxModel.Items.AddRange(new object[] {
+            "L340",
+            "S145"});
+            this.cmbBoxModel.Location = new System.Drawing.Point(12, 46);
+            this.cmbBoxModel.Name = "cmbBoxModel";
+            this.cmbBoxModel.Size = new System.Drawing.Size(99, 23);
+            this.cmbBoxModel.TabIndex = 40;
+            this.cmbBoxModel.SelectedIndexChanged += new System.EventHandler(this.cmbBoxModelIndexChanged);
+            // 
+            // modelAddBtn
+            // 
+            this.modelAddBtn.Location = new System.Drawing.Point(117, 46);
+            this.modelAddBtn.Name = "modelAddBtn";
+            this.modelAddBtn.Size = new System.Drawing.Size(23, 23);
+            this.modelAddBtn.TabIndex = 41;
+            this.modelAddBtn.Text = "+";
+            this.modelAddBtn.UseVisualStyleBackColor = true;
+            this.modelAddBtn.Click += new System.EventHandler(this.modelAddBtn_Click);
+            // 
             // SORTER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 313);
+            this.Controls.Add(this.modelAddBtn);
+            this.Controls.Add(this.cmbBoxModel);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -474,7 +491,6 @@
             this.Controls.Add(this.chBoxCardboardDirt);
             this.Controls.Add(this.chBoxCardboardDamage);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmBoxLaptopModel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxLaptopSn);
             this.Controls.Add(this.txtBoxCardboardSn);
@@ -494,7 +510,6 @@
         private TextBox txtBoxCardboardSn;
         private TextBox txtBoxLaptopSn;
         private Label label2;
-        private ComboBox cmBoxLaptopModel;
         private Label label3;
         private CheckBox chBoxCardboardDamage;
         private CheckBox chBoxCardboardDirt;
@@ -528,5 +543,7 @@
         private Label label15;
         private Label label16;
         private Label label18;
+        private ComboBox cmbBoxModel;
+        private Button modelAddBtn;
     }
 }
